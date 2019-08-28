@@ -18,6 +18,9 @@ import SoalScreen from './Components/Soals/SoalScreen';
 import HistoryScreen from './Components/HistoryScreen';
 import TipsScreen from './Components/TipsScreen';
 
+import Login from './Components/Users/Login'
+import Register from './Components/Users/Register'
+import Auth from './Components/Users/Auth'
 
 const MainStack = createStackNavigator({
   Home: Home,
@@ -34,8 +37,18 @@ const MainStack = createStackNavigator({
   
 });
 
-export default Main = createAppContainer(createStackNavigator({
-  Pertama: MainStack,
+const UserStack = createSwitchNavigator({
+  Login: Login,
+  Register: Register,
+  Auth: Auth
+},{
+  initialRouteName:'Auth',
+  headerMode:'none'
+})
+
+export default Main = createAppContainer(createSwitchNavigator({
+  Pertama: UserStack,
+  Kedua: MainStack
 },{
   initialRouteName:'Pertama',
   headerMode:'none'

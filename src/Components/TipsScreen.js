@@ -22,7 +22,7 @@ export default class TipsScreen extends Component {
   render () {
     return (
       <Container style={{paddingTop:30, flex:1}}>
-        <Header style={{backgroundColor:'#2F954E'}}>
+        <Header style={{backgroundColor:'#071d82'}}>
           <View style={{width:40, justifyContent:'center', alignContent:'center'}}>
             <TouchableOpacity onPress={()=>this.props.navigation.goBack()}>
               <Ionicons name="ios-arrow-back" size={32} color="white"/>

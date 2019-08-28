@@ -1,8 +1,20 @@
 import React, { Component } from 'react'
-import { Text, View, Dimensions, TouchableOpacity } from 'react-native'
+import { Text, View, Dimensions, TouchableOpacity, AsyncStorage } from 'react-native'
 import {Card} from 'native-base';
 
 export default class Home extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+
+    }
+  }
+
+  _logout(){
+    AsyncStorage.clear()
+    this.props.navigation.navigate('Auth');
+  }
+
   render() {
     const {width, height} = Dimensions.get('screen');
     return (
@@ -26,7 +38,7 @@ export default class Home extends Component {
                   marginRight: 15,
                   marginTop: 10,
                   borderRadius: 10,
-                  backgroundColor:'#2F954E'
+                  backgroundColor:'#071d82'
                 }}
               >
                 <TouchableOpacity onPress={()=>this.props.navigation.navigate('Materi',{kelas:'7'})} style={{ flex: 1, flexDirection: 'column' }}>
@@ -52,7 +64,7 @@ export default class Home extends Component {
                   marginRight: 15,
                   marginTop: 10,
                   borderRadius: 10,
-                  backgroundColor:'#2F954E'
+                  backgroundColor:'#071d82'
                 }}
               >
                 <TouchableOpacity onPress={()=>this.props.navigation.navigate('Materi',{kelas:'8'})} style={{ flex: 1, flexDirection: 'column' }}>
@@ -78,7 +90,7 @@ export default class Home extends Component {
                   marginRight: 15,
                   marginTop: 10,
                   borderRadius: 10,
-                  backgroundColor:'#2F954E'
+                  backgroundColor:'#071d82'
                 }}
               >
                 <TouchableOpacity onPress={()=>this.props.navigation.navigate('Materi',{kelas:'9'})} style={{ flex: 1, flexDirection: 'column' }}>
@@ -104,10 +116,10 @@ export default class Home extends Component {
                   marginRight: 15,
                   marginTop: 10,
                   borderRadius: 10,
-                  backgroundColor:'#2F954E'
+                  backgroundColor:'#071d82'
                 }}
               >
-                <TouchableOpacity onPress={()=>this.props.navigation.navigate('Info')} style={{ flex: 1, flexDirection: 'column' }}>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate('Soal')} style={{ flex: 1, flexDirection: 'column' }}>
                   <View
                     style={{
                       flex: 2,
@@ -130,7 +142,7 @@ export default class Home extends Component {
                   marginRight: 15,
                   marginTop: 10,
                   borderRadius: 10,
-                  backgroundColor:'#2F954E'
+                  backgroundColor:'#071d82'
                 }}
               >
                 <TouchableOpacity onPress={()=>this.props.navigation.navigate('Tips')} style={{ flex: 1, flexDirection: 'column' }}>
@@ -156,7 +168,7 @@ export default class Home extends Component {
                   marginRight: 15,
                   marginTop: 10,
                   borderRadius: 10,
-                  backgroundColor:'#2F954E'
+                  backgroundColor:'#071d82'
                 }}
               >
                 <TouchableOpacity onPress={()=>this.props.navigation.navigate('History')} style={{ flex: 1, flexDirection: 'column' }}>
@@ -170,7 +182,33 @@ export default class Home extends Component {
                   />
                   <View style={{ flex: 1 }}>
                     <Text style={{ fontSize: 18, textAlign: 'center', color:'white' }}>
-                      History
+                      Recent
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              </Card>
+              <Card
+                style={{
+                  height: 100,
+                  width: width / 2 - 50,
+                  marginRight: 15,
+                  marginTop: 10,
+                  borderRadius: 10,
+                  backgroundColor:'#071d82'
+                }}
+              >
+                <TouchableOpacity onPress={()=>this._logout()} style={{ flex: 1, flexDirection: 'column' }}>
+                  <View
+                    style={{
+                      flex: 2,
+                      justifyContent: 'center',
+                      alignContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  />
+                  <View style={{ flex: 1 }}>
+                    <Text style={{ fontSize: 18, textAlign: 'center', color:'white' }}>
+                      Logout
                     </Text>
                   </View>
                 </TouchableOpacity>

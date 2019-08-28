@@ -41,7 +41,7 @@ export default class MateriScreen extends Component {
                 marginRight: 15,
                 marginTop: 10,
                 borderRadius: 10,
-                backgroundColor: '#2F954E',
+                backgroundColor: '#071d82',
               }}
             >
               <TouchableOpacity onPress={()=>this.props.navigation.navigate('Lihat',{
@@ -72,7 +72,7 @@ export default class MateriScreen extends Component {
                 marginRight: 15,
                 marginTop: 10,
                 borderRadius: 10,
-                backgroundColor: '#2F954E',
+                backgroundColor: '#071d82',
               }}
             >
               <TouchableOpacity onPress={()=>this.props.navigation.navigate('Lihat',{
@@ -103,7 +103,7 @@ export default class MateriScreen extends Component {
                 marginRight: 15,
                 marginTop: 10,
                 borderRadius: 10,
-                backgroundColor: '#2F954E',
+                backgroundColor: '#071d82',
               }}
             >
               <TouchableOpacity onPress={()=>this.props.navigation.navigate('Lihat',{
@@ -134,7 +134,7 @@ export default class MateriScreen extends Component {
                 marginRight: 15,
                 marginTop: 10,
                 borderRadius: 10,
-                backgroundColor: '#2F954E',
+                backgroundColor: '#071d82',
               }}
             >
               <TouchableOpacity onPress={()=>this.props.navigation.navigate('Lihat',{

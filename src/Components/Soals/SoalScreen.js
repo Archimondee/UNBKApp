@@ -19,7 +19,6 @@ import {
   Content,
 } from 'native-base';
 import {Ionicons} from 'react-native-vector-icons';
-
 const cards = [
   {
     id: '1',
@@ -53,7 +52,7 @@ export default class SoalScreen extends Component {
       jd: false,
       ans: 'A',
       soal: this.props.navigation.getParam ('soal'),
-      no_ujian: this.props.navigation.getParam('no_ujian'),
+      username: this.props.navigation.getParam('username'),
       //soal : '',
       done: false,
       hasil: 0,
@@ -111,7 +110,10 @@ export default class SoalScreen extends Component {
   }
 
   submitNilai(){
-    const {hasil, no_ujian, jenis_soal} = this.state;
+    const {hasil, username, jenis_soal} = this.state;
+    console.log(this.state.username);
+    console.log(this.state.hasil)
+    console.log(this.state.jenis_soal)
     fetch('https://kumpulan-soal-smp.000webhostapp.com/api_soal/updateData.php',{
        method: 'POST',
        headers: {
@@ -119,7 +121,7 @@ export default class SoalScreen extends Component {
          'Content-Type':'application/json'
        },
        body: JSON.stringify({
-          no_ujian: no_ujian,
+          username: username,
           //hitung2an belum fix
           nilai: parseInt(hasil),
           kd_matpel: jenis_soal
@@ -128,7 +130,7 @@ export default class SoalScreen extends Component {
       .then(responseJson=>{
         if(responseJson == 'Berhasil'){
           alert("Nilai sudah di input\n Silahkan kerjakan soal yang lain\n Terimakasih");
-          this.props.navigation.navigate('Soal');
+          this.props.navigation.navigate('Home');
         }
       }).catch((err)=>{
         alert(err)
@@ -159,7 +161,7 @@ export default class SoalScreen extends Component {
     const {height, width} = Dimensions.get('screen');
     return (
       <Container style={{paddingTop: 30, flex: 1}}>
-        <Header style={{backgroundColor: '#2F954E'}}>
+        <Header style={{backgroundColor: '#071d82'}}>
           <Left>
             <TouchableOpacity onPress={() => this.props.navigation.goBack ()}>
               <Ionicons name="ios-arrow-back" size={32} color="white" />
@@ -193,7 +195,7 @@ export default class SoalScreen extends Component {
                         style={{
                           width: 150,
                           justifyContent: 'center',
-                          backgroundColor: '#2F954E',
+                          backgroundColor: '#071d82',
                         }}
                       >
                         <Text
@@ -324,7 +326,7 @@ export default class SoalScreen extends Component {
                   >
                     <View />
                     <Button
-                      style={{width: 150, backgroundColor: '#2F954E'}}
+                      style={{width: 150, backgroundColor: '#071d82'}}
                       iconRight
                       onPress={() =>
                         this.checkJawaban (item.id, this._deckSwiper)}

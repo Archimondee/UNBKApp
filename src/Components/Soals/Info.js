@@ -109,7 +109,7 @@ export default class Info extends Component {
                 style={{
                   width: 150,
                   justifyContent: 'center',
-                  backgroundColor: '#2F954E',
+                  backgroundColor: '#071d82',
                 }}
               >
                 <Text
