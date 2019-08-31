@@ -12,7 +12,7 @@ export default class Home extends Component {
 
   _logout(){
     AsyncStorage.clear()
-    this.props.navigation.navigate('Auth');
+    this.props.navigation.navigate('Login');
   }
 
   render() {
@@ -156,7 +156,7 @@ export default class Home extends Component {
                   />
                   <View style={{ flex: 1 }}>
                     <Text style={{ fontSize: 18, textAlign: 'center', color:'white' }}>
-                      Tips & Trick
+                      Tips & Trik
                     </Text>
                   </View>
                 </TouchableOpacity>
@@ -182,7 +182,7 @@ export default class Home extends Component {
                   />
                   <View style={{ flex: 1 }}>
                     <Text style={{ fontSize: 18, textAlign: 'center', color:'white' }}>
-                      Recent
+                      Riwayat
                     </Text>
                   </View>
                 </TouchableOpacity>

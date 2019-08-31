@@ -29,7 +29,7 @@ export default class TipsScreen extends Component {
             </TouchableOpacity>
           </View>
           <Body style={{flexDirection:'row'}}>
-            <Text style={{color:'white'}}>Tips & Trick</Text>
+            <Text style={{color:'white'}}>Tips & Trik</Text>
           </Body>
         </Header>
         <Content padder>

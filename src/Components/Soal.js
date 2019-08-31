@@ -182,7 +182,7 @@ export default class MateriScreen extends Component {
               alignItems: 'center',
             }}
           >
-            {parseInt(this.state.data.nilai_mtk)==0?(<Card
+            <Card
               style={{
                 height: 100,
                 width: width / 2 - 50,
@@ -213,8 +213,9 @@ export default class MateriScreen extends Component {
                   </Text>
                 </View>
               </TouchableOpacity>
-            </Card>):null}
-            {parseInt(this.state.data.nilai_ipa)==0?(<Card
+            </Card>
+
+            <Card
               style={{
                 height: 100,
                 width: width / 2 - 50,
@@ -245,9 +246,9 @@ export default class MateriScreen extends Component {
                   </Text>
                 </View>
               </TouchableOpacity>
-            </Card>):null}
+            </Card>
 
-            {parseInt(this.state.data.nilai_indo)==0?(<Card
+            <Card
               style={{
                 height: 100,
                 width: width / 2 - 50,
@@ -277,9 +278,9 @@ export default class MateriScreen extends Component {
                   </Text>
                 </View>
               </TouchableOpacity>
-            </Card>):null}
+            </Card>
 
-            {parseInt(this.state.data.nilai_inggris)==0?(<Card
+            <Card
               style={{
                 height: 100,
                 width: width / 2 - 50,
@@ -309,7 +310,7 @@ export default class MateriScreen extends Component {
                   </Text>
                 </View>
               </TouchableOpacity>
-            </Card>):null}
+            </Card>
 
          
           </View>
