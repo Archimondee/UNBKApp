@@ -59,6 +59,7 @@ export default class SoalScreen extends Component {
       nomor_soal: 0,
       jenis_soal: this.props.navigation.getParam ('kd_matpel'),
       //jenis_soal : ''
+      i:0
     };
   }
 
@@ -111,9 +112,6 @@ export default class SoalScreen extends Component {
 
   submitNilai(){
     const {hasil, username, jenis_soal} = this.state;
-    console.log(this.state.username);
-    console.log(this.state.hasil)
-    console.log(this.state.jenis_soal)
     fetch('https://kumpulan-soal-smp.000webhostapp.com/api_soal/updateData.php',{
        method: 'POST',
        headers: {
@@ -156,7 +154,8 @@ export default class SoalScreen extends Component {
       }
     });
   }
-
+  
+  
   render () {
     const {height, width} = Dimensions.get('screen');
     return (
@@ -169,7 +168,7 @@ export default class SoalScreen extends Component {
           </Left>
           <Body>
             <Text style={{color: 'white'}}>
-              Latihan soal {this.state.jenis_soal}
+              Latihan soal {this.state.jenis_soal} (30 Soal)
             </Text>
           </Body>
           <Right />
@@ -212,16 +211,16 @@ export default class SoalScreen extends Component {
                       <ScrollView style={{marginTop:15, paddingBottom:15, paddingTop:15,paddingLeft:10, paddingRight:10, height:'80%', width:'100%'}}>
                         <View style={{width:'100%', borderColor:'black', borderWidth:1, flexDirection:'column'}}>
                           <View style={{flexDirection:'row'}}>
-                            <View style={{flex:0.3, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center'}}>
+                            <View style={{flex:0.32, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center'}}>
                               <Text>No</Text>
                             </View>
-                            <View style={{flex:1.5, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center'}}>
+                            <View style={{flex:1.4, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center'}}>
                               <Text>Soal</Text>
                             </View>
-                            <View style={{flex:1, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center'}}>
+                            <View style={{flex:0.98, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center'}}>
                               <Text>Penjelasan</Text>
                             </View>
-                            <View style={{flex:0.5, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center'}}>
+                            <View style={{flex:0.525, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center'}}>
                               <Text>Jawaban</Text>
                             </View>
                           </View>
@@ -229,16 +228,16 @@ export default class SoalScreen extends Component {
                             this.state.soal.map((items, i)=>{
                               return(
                                 <View key={i} style={{flexDirection:'row'}}>
-                                  <View style={{flex:0.3, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center'}}>
+                                  <View style={{flex:0.35, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center', flexWrap:'wrap'}}>
                                     <Text>{i+1}</Text>
                                   </View>
-                                  <View style={{flex:1.5, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center', padding:5}}>
+                                  <View style={{flex:1.5, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center', padding:5,flexWrap:'wrap'}}>
                                     <Text>{items.pertanyaan}</Text>
                                   </View>
-                                  <View style={{flex:1, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center', padding:5}}>
+                                  <View style={{flex:1, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center', padding:5,flexWrap:'wrap'}}>
                                     <Text>{items.penjelasan}</Text>
                                   </View>
-                                  <View style={{flex:0.5, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center', padding:5}}>
+                                  <View style={{flex:0.5, borderBottomColor:'black', borderWidth:1, alignContent:'center',alignItems:'center', padding:5,flexWrap:'wrap'}}>
                                     <Text>{items.jawaban}</Text>
                                   </View>
                                 </View>
@@ -251,7 +250,7 @@ export default class SoalScreen extends Component {
                 }
               </View>
             )}
-            renderItem={(item, i = 0) => (
+            renderItem={(item) => (
               <Card style={{elevation: 3, flex: 1}}>
                 <ScrollView
                   style={{flex: 1}}
@@ -267,7 +266,7 @@ export default class SoalScreen extends Component {
                     }}
                   >
                     <ScrollView style={{height: 200, width: 200}}>
-                      <Text>{item.pertanyaan}</Text>
+                      <Text>{item.pertanyaan} </Text>
                     </ScrollView>
                   </CardItem>
                   <Content>
@@ -339,6 +338,7 @@ export default class SoalScreen extends Component {
                   </View>
                 </ScrollView>
               </Card>
+              
             )}
           />
         </View>

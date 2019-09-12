@@ -97,7 +97,7 @@ export default class LihatMateri extends Component {
                 <Text>Nama File</Text>
               </View>
               <View style={{flex:1,borderRightWidth:1, borderRightColor:'black', alignItems:'center', borderBottomColor:'black', borderBottomWidth:1, height:40,justifyContent:'center'}}>
-                <Text>Ukuran</Text>
+                <Text>Jenis File</Text>
               </View>
               <View style={{flex:1, alignItems:'center', borderBottomColor:'black', borderBottomWidth:1, height:40,justifyContent:'center'}}>
                 <Text>Download</Text>
@@ -106,7 +106,7 @@ export default class LihatMateri extends Component {
             {this.state.data.map((items, i)=>{ return(
               <View key={i} style={{flex:1, flexDirection:'row'}}>
                 <View style={{flex:0.5, borderRightWidth:1, borderRightColor:'black', alignItems:'center', borderBottomColor:'black', borderBottomWidth:1, height:40, justifyContent:'center'}}>
-                  <Text>{i}</Text>
+                  <Text>{i+1}</Text>
                 </View>
                 <View style={{flex:1.5,borderRightWidth:1, borderRightColor:'black', alignItems:'center', borderBottomColor:'black', borderBottomWidth:1, height:40,justifyContent:'center'}}>
                   <Text>{items.file_name}</Text>
